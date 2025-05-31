@@ -29,5 +29,7 @@ test('@Sanity, Verify that the user can complete their [Happy Path] and complete
     await bookingP.verify_booking_completion();
     // await page.screenshot({path: 'expectbed_page.png'})
     
+    
+    const bag = 1;
 
 })
