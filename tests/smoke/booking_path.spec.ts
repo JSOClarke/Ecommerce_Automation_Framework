@@ -3,16 +3,17 @@ import homePage from "../../pages/homePage";
 import bookingPage from "../../pages/bookingPage";
 import { validInput } from "../data/validInput";
 
+
 test('@Sanity, Verify that the user can complete their [Happy Path] and complete booking', async ({page}) => {
+const baseUrl = 'https://automationintesting.online';
+    await page.goto(baseUrl);
 
-    await page.goto('https://automationintesting.online/reservation/12?checkin=2025-05-27&checkout=2025-05-28');
-
-    // const homeP = new homePage(page);
+    const homeP = new homePage(page);
     
-    // await homeP.clickRoomButton();   
-    // await homeP.clickBookNow();
+    await homeP.clickRoomButton();   
+    await homeP.clickBookNow();
 
-    // await expect(page).toHaveURL( /reservation/ )
+    await expect(page).toHaveURL( /reservation/ )
 
     const bookingP = new bookingPage(page);
     // await page.waitForTimeout(3000);
@@ -28,8 +29,5 @@ test('@Sanity, Verify that the user can complete their [Happy Path] and complete
     // await page.screenshot({path: 'error.png'})
     await bookingP.verify_booking_completion();
     // await page.screenshot({path: 'expectbed_page.png'})
-    
-    
-    const bag = 1;
 
 })
