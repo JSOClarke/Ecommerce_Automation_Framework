@@ -30,4 +30,5 @@ const baseUrl = 'https://automationintesting.online';
     await bookingP.verify_booking_completion();
     // await page.screenshot({path: 'expectbed_page.png'})
 
+    const bad = 'badff';
 })
